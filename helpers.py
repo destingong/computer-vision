@@ -1,4 +1,4 @@
-from IPython.display import HTML, Markdown
+from IPython.display import display, HTML, Markdown
 import pandas as pd
 
 def display_comparison_results(df: pd.DataFrame):
@@ -28,8 +28,10 @@ def display_comparison_results(df: pd.DataFrame):
 def display_segmentation(output):
     output_labels = [i['label'] for i in output]
     output_masks = [i['mask'] for i in output]
-    print(output_labels)
+    
+    st.write(output_labels)
     for m in output_masks:
-        display(m)
+        # display(m)
+        st.write(output_masks)
         
     return output_labels
