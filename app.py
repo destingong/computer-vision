@@ -37,8 +37,6 @@ def get_uploaded_image():
     else:
         image = None
 
-    #TODO: (with a default image pre-displayed)
-
     return image
 
 
@@ -101,18 +99,17 @@ def display_results(image, task_list, user_question, model):
             
         row = {
             'task': task,
-            # 'params': params,
         }
-
-        try:
-            model = i['model']
-            row['model'] = model
+        
+        if model != None:
+            # model = i['model']
+            # row['model'] = model
             pipe = pipeline(task, model=model)
 
-        except Exception as e:
+        else:
             pipe = pipeline(task)
-            row['model'] = pipe.model.name_or_path
-
+            
+        row['model'] = pipe.model.name_or_path
         start_time = time.time()
         output = pipe(
             image,
@@ -126,9 +123,7 @@ def display_results(image, task_list, user_question, model):
 
         # display image segentation visual output
         if task == 'image-segmentation':
-            # output_labels = [i['label'] for i in output]
             output_masks = [i['mask'] for i in output]
-            # row['output'] = output_labels
 
         row['output'] = str(output)
         
@@ -136,7 +131,10 @@ def display_results(image, task_list, user_question, model):
         results_df = pd.DataFrame(results)
         
     st.write('Model Responses')
-    st.dataframe(results_df)
+    # st.dataframe(
+    #     results_df
+    # )
+    st.table(results_df)
 
     if 'image-segmentation' in task_list:
         st.write('Segmentation Mask Output')
