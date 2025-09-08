@@ -2,11 +2,11 @@
 import streamlit as st
 import PIL
 from PIL import Image
-import helpers
+# import helpers
 import time
 import pandas as pd
 from transformers import pipeline
-from IPython.display import display, HTML
+# from IPython.display import display, HTML
 
 # configure page layout - title, page icon, description
 def initialize_page():
