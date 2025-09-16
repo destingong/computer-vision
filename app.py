@@ -2,6 +2,7 @@
 import streamlit as st
 import PIL
 from PIL import Image
+import torch
 # import helpers
 import time
 import pandas as pd
