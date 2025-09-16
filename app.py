@@ -33,7 +33,7 @@ def get_uploaded_image():
     )
     if uploaded_file:
         image = Image.open(uploaded_file)
-        st.image(image, caption='Preview', width=600, use_container_width=False)
+        st.image(image, caption='Preview', width=400, use_container_width=False)
 
     else:
         image = None
