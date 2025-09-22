@@ -9,5 +9,6 @@ A practical Streamlit implementation to explore computer vision tasks and transf
 For a detailed walkthrough, check out these resources:
 * Towards Data Science Blog Post: [An Interactive Guide to 4 Fundamental Computer Vision Tasks Using Transformers](https://towardsdatascience.com/model-context-protocol-mcp-tutorial-build-your-first-mcp-server-in-6-steps/)
 * YouTube Tutorial: [4 Types of Computer Vision Tasks Using Transformers](https://youtu.be/xuhmyPaHKe8?si=sirkSI8VPUVsp20G)
+* Web App URL: [Computer Vision Tasks | Streamlit ](https://huggingface-computer-vision.streamlit.app/)
 
 If you find this helpful, consider supporting our work: [Buy Me a Coffee](https://buymeacoffee.com/visualdesign) ☕
